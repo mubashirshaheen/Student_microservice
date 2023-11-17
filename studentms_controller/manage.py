@@ -1,14 +1,14 @@
-#!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from django.core.management.commands.runserver import Command as runserver
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studentms_controller.settings')
     try:
         from django.core.management import execute_from_command_line
+        runserver.default_port = "8000"
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "

@@ -21,7 +21,11 @@ class Student(models.Model):
     student_mail = models.EmailField()
     student_contact = models.CharField(max_length=20)
     student_gender = models.CharField(max_length=1, choices=GENDER, default='M')
-
+    
+    
+    def __str__(self):
+        return self.name
+    
 
 class College(models.Model):
     college_name = models.CharField(max_length=100)
